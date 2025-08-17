@@ -21,8 +21,8 @@ class CityService {
     return city
   }
 
-  async getAllCities() {
-    const cities = await this.cityRepository.getAllCities()
+  async getAllCities(filter) {
+    const cities = await this.cityRepository.getAllCities({ name: filter.name })
     return cities
   }
 }
